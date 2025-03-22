@@ -1,6 +1,6 @@
 package com.sistematickets.sistematickets;
 
-public class Administrador {
+public class Administrador extends Persona {
 
 
     public void gestionParametros(){

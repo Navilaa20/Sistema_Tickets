@@ -1,10 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+package com.sistematickets.sistematickets;
 
-public class Administrador extends Persona{
+public class Administrador {
 
-
-    
 
     public void gestionParametros(){
 
@@ -45,6 +42,5 @@ public class Administrador extends Persona{
     public void gestionUsuarios (){
 
     }
-
 
 }

@@ -6,6 +6,7 @@ module com.sistematickets.sistematickets {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens com.sistematickets.sistematickets to javafx.fxml;
     exports com.sistematickets.sistematickets;

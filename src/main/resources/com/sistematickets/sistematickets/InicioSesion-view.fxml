@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: c9c9c9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Login">
+    <children>
+      <Label layoutX="68.0" layoutY="192.0" text="Usuario:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="237.0" prefHeight="27.0" prefWidth="115.0" text="Contraseña:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="96.0" prefHeight="50.0" prefWidth="301.0" text="Gestión de Tickets">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <TextField layoutX="179.0" layoutY="193.0" prefHeight="25.0" prefWidth="191.0" />
+      <PasswordField layoutX="179.0" layoutY="238.0" prefHeight="25.0" prefWidth="191.0" />
+      <ImageView fitHeight="400.0" fitWidth="200.0" layoutX="416.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/pngtree-blue-ticket-icon-on-white-background-png-image_4902345.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnInicio" layoutX="219.0" layoutY="287.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión" />
+    </children>
+</Pane>

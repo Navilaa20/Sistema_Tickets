@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.sistematickets.sistematickets.RolView"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.PermisoView">
+   <children>
+      <Label layoutX="259.0" layoutY="30.0" text="Rol">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="51.0" fitWidth="47.0" layoutX="40.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/Usuario.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="99.0" layoutY="55.0" text="Nombre:" />
+      <Label layoutX="98.0" layoutY="28.0" text="Usuario:" />
+      <Button layoutX="490.0" layoutY="16.0" mnemonicParsing="false" text="Cerrar Sesión" />
+      <Label layoutX="50.0" layoutY="113.0" text="Id Rol" />
+      <TextField layoutX="141.0" layoutY="109.0" prefHeight="25.0" prefWidth="133.0" promptText="0001" />
+      <TextField layoutX="141.0" layoutY="143.0" prefHeight="25.0" prefWidth="133.0" promptText="Rol" />
+      <Label layoutX="50.0" layoutY="147.0" text="Rol" />
+      <Label layoutX="228.0" layoutY="192.0" text="Permisos a Otorgar" />
+      <Label layoutX="300.0" layoutY="113.0" text="Usuario que crea el rol" />
+      <TextField layoutX="431.0" layoutY="109.0" prefHeight="25.0" prefWidth="119.0" promptText="Admin" />
+      <RadioButton layoutX="37.0" layoutY="231.0" mnemonicParsing="false" text="Crear Ticket" />
+      <RadioButton layoutX="155.0" layoutY="231.0" mnemonicParsing="false" text="Editar Ticket" />
+      <RadioButton layoutX="259.0" layoutY="231.0" mnemonicParsing="false" text="Crear Usuario" />
+      <RadioButton layoutX="373.0" layoutY="231.0" mnemonicParsing="false" text="Cambiar Estado de Ticket" />
+      <RadioButton layoutX="39.0" layoutY="259.0" mnemonicParsing="false" text="Ver Ticket" />
+      <RadioButton layoutX="155.0" layoutY="259.0" mnemonicParsing="false" text="Eliminar Ticket" />
+      <RadioButton layoutX="273.0" layoutY="259.0" mnemonicParsing="false" text="Asignar permisos" />
+      <RadioButton layoutX="403.0" layoutY="259.0" mnemonicParsing="false" text="Crear Roles" />
+      <RadioButton layoutX="39.0" layoutY="290.0" mnemonicParsing="false" text="Definir Parámetros" />
+      <RadioButton layoutX="170.0" layoutY="290.0" mnemonicParsing="false" text="Crear departamentos" />
+      <Button layoutX="202.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Grabar" />
+      <Button layoutX="319.0" layoutY="332.0" mnemonicParsing="false" text="Deshacer" />
+   </children>
+</Pane>

@@ -1,6 +1,6 @@
 package com.sistematickets.sistematickets;
 
-public class Usuario extends Persona {
+public class Usuario {
 
     public void crearTicket(){
 

@@ -1,6 +1,11 @@
 package com.sistematickets.sistematickets;
 
-public class Administrador extends Persona {
+public class Administrador implements Stage {
+
+    private Stage stage;
+    public Administrador() {
+        this.stage = stage;
+    }
 
 
     public void gestionParametros(){
@@ -43,4 +48,8 @@ public class Administrador extends Persona {
 
     }
 
+    @Override
+    public void setStage(Stage stage) {
+
+    }
 }

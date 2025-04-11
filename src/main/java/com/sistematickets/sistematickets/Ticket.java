@@ -6,6 +6,22 @@ public class Ticket {
     private String description;
     private String estado;
     private String prioridad;
+    private String descripcion;
+
+    public Ticket() {
+
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) throws Exception {
+        if (descripcion == null || descripcion.isEmpty()) {
+            throw new Exception("La descripción no puede estar vacía");
+        }
+        this.descripcion = descripcion;
+    }
 
     public Ticket(int id, String description, String estado, String prioridad) {
         this.id = id;

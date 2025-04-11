@@ -1,6 +1,18 @@
 package com.sistematickets.sistematickets;
 
-public class Tecnico {
+import java.util.List;
+
+public class Tecnico extends Persona {
+
+    private List<Ticket> ticketsAsignados;
+
+    public List<Ticket> getTicketsAsignados() {
+        return ticketsAsignados;
+    }
+
+    public void setTicketsAsignados(List<Ticket> ticketsAsignados) {
+        this.ticketsAsignados = ticketsAsignados;
+    }
 
     public void gestionarTicket(){
 

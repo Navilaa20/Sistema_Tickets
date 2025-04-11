@@ -1,10 +1,23 @@
 package com.sistematickets.sistematickets;
 
-public class Administrador implements Stage {
+import java.util.List;
+
+public class Administrador extends Persona implements Stage {
 
     private Stage stage;
     public Administrador() {
+        super();
         this.stage = stage;
+    }
+
+    private List <Permiso> permisos;
+
+    public List <Permiso> getPermisos() {
+        return permisos;
+    }
+
+    public void setPermisos(List <Permiso> permisos) {
+        this.permisos = permisos;
     }
 
 

@@ -1,13 +1,17 @@
 package com.sistematickets.sistematickets;
 
-public class Usuario {
+public class Usuario extends Persona {
 
-    public void crearTicket(){
 
+    public Ticket crearTicket(String descripcion) throws  Exception{
+        Ticket ticket = new Ticket();
+        Ticket.setDescripcion (descripcion);
+        return ticket;
     }
 
-    public void consultarTicket(){
-
+    public void mostrarUsuario(Persona persona){
+        System.out.println("Nombre: " + persona.getNombre());
     }
+
 
 }

@@ -1,6 +1,11 @@
 package com.sistematickets.sistematickets;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Persona {
+
+    private static List<Persona> personas = new ArrayList<>();
 
     private String id;
     private String nombre;
@@ -52,4 +57,32 @@ public class Persona {
         this.contrasenia = contrasenia;
     }
 
+    public static void crear(Persona p) {
+        personas.add(p);
+    }
+
+    public static Persona leer(String id) {
+        for (Persona p : personas) {
+            if (p.getId().equals(id)) return p;
+        }
+        return null;
+    }
+
+    public static void actualizar(Persona actualizada) {
+        for (int i = 0; i < personas.size(); i++) {
+            if (personas.get(i).getId().equals(actualizada.getId())) {
+                personas.set(i, actualizada);
+                break;
+            }
+        }
+    }
+
+    public static void eliminar(String id) {
+        personas.removeIf(p -> p.getId().equals(id));
+    }
+
+    public static List<Persona> listar() {
+        return personas;
+
+    }
 }

@@ -3,9 +3,9 @@ package com.sistematickets.sistematickets;
 public class Usuario extends Persona {
 
 
-    public Ticket crearTicket(String descripcion) throws  Exception{
+    public Ticket crearTicket(String descripcion) throws Exception {
         Ticket ticket = new Ticket();
-        Ticket.setDescripcion (descripcion);
+        ticket.setDescripcion(descripcion);
         return ticket;
     }
 

@@ -24,6 +24,11 @@
       <artifactId>javafx-fxml</artifactId>
       <version>21.0.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.7.5</version>
+    </dependency>
 <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>

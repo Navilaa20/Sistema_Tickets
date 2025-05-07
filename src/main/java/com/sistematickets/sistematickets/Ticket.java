@@ -1,5 +1,6 @@
 package com.sistematickets.sistematickets;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,33 +9,28 @@ public class Ticket {
     private static List<Ticket> tickets = new ArrayList<>();
 
     private int id;
-    private String description;
+    private String titulo;
+    private String descripcion;
+    private LocalDateTime fechaCreacion;
     private String estado;
     private String prioridad;
-    private String descripcion;
+    private String personaId;
 
     public Ticket() {
-
+        this.fechaCreacion = LocalDateTime.now();
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) throws Exception {
-        if (descripcion == null || descripcion.isEmpty()) {
-            throw new Exception("La descripción no puede estar vacía");
-        }
-        this.descripcion = ("descripcion");
-    }
-
-    public Ticket(int id, String description, String estado, String prioridad) {
+    public Ticket(int id, String titulo, String descripcion, String estado, String prioridad, String personaId) {
         this.id = id;
-        this.description = description;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaCreacion = LocalDateTime.now();
         this.estado = estado;
         this.prioridad = prioridad;
+        this.personaId = personaId;
     }
 
+    // Getters y setters
     public int getId() {
         return id;
     }
@@ -43,12 +39,31 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) throws Exception {
+        if (descripcion == null || descripcion.trim().isEmpty()) {
+            throw new Exception("La descripción no puede estar vacía");
+        }
+        this.descripcion = descripcion;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public String getEstado() {
@@ -67,35 +82,12 @@ public class Ticket {
         this.prioridad = prioridad;
     }
 
-    public void historial (){
+    public String getPersonaId() {
+        return personaId;
     }
 
-    public static void crear(Ticket t) {
-        tickets.add(t);
-    }
-
-    public static Ticket leer(int id) {
-        for (Ticket t : tickets) {
-            if (t.getId() == id) return t;
-        }
-        return null;
-    }
-
-    public static void actualizar(Ticket actualizado) {
-        for (int i = 0; i < tickets.size(); i++) {
-            if (tickets.get(i).getId() == actualizado.getId()) {
-                tickets.set(i, actualizado);
-                break;
-            }
-        }
-    }
-
-    public static void eliminar(int id) {
-        tickets.removeIf(t -> t.getId() == id);
-    }
-
-    public static List<Ticket> listar() {
-        return tickets;
+    public void setPersonaId(String personaId) {
+        this.personaId = personaId;
     }
 
 }

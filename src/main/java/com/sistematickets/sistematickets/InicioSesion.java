@@ -31,6 +31,11 @@ public class InicioSesion implements Stage {
 
     }
 
+    @Override
+    public void setStage(javafx.stage.Stage stage) {
+
+    }
+
     @FXML
     public void btnIniciar(ActionEvent actionEvent) throws SQLException {
 

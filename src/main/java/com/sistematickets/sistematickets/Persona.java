@@ -1,9 +1,12 @@
 package com.sistematickets.sistematickets;
 
+import javax.management.relation.Role;
+import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class Persona {
+public abstract class Persona {
 
     private static List<Persona> personas = new ArrayList<>();
 
@@ -11,11 +14,23 @@ public class Persona {
     private String nombre;
     private String email;
     private String contrasenia;
+    private String role;
 
-    public Persona(String id, String nombre, String email) {
+
+    public Persona(String id, String nombre, String email, String contrasenia, String role) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
+        this.contrasenia = contrasenia;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Persona() {
@@ -84,5 +99,16 @@ public class Persona {
     public static List<Persona> listar() {
         return personas;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", contrasenia='" + contrasenia + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="com.sistematickets.sistematickets.ParametrosController"
+            prefWidth="600" prefHeight="600">
+
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10" padding="Insets(20)">
+
+        <Label text="Configuración de Parámetros del Sistema" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <HBox spacing="10">
+            <Label text="Nombre de la Empresa:" minWidth="150"/>
+            <TextField fx:id="txtNombreEmpresa" prefWidth="400"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Ruta del Logo:" minWidth="150"/>
+            <TextField fx:id="txtLogoPath" prefWidth="300"/>
+            <Button text="Seleccionar" onAction="#seleccionarLogo"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Idioma Predeterminado:" minWidth="150"/>
+            <ComboBox fx:id="cmbIdioma" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Zona Horaria:" minWidth="150"/>
+            <ComboBox fx:id="cmbZonaHoraria" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Días para vencimiento:" minWidth="150"/>
+            <Spinner fx:id="spnDiasVencimiento" prefWidth="100"/>
+        </HBox>
+
+        <Separator/>
+
+        <Label text="Prioridades de Tickets" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+        <HBox spacing="10">
+            <Label text="Alta:" minWidth="150"/>
+            <TextField fx:id="txtPrioridadAlta" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Media:" minWidth="150"/>
+            <TextField fx:id="txtPrioridadMedia" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Baja:" minWidth="150"/>
+            <TextField fx:id="txtPrioridadBaja" prefWidth="200"/>
+        </HBox>
+
+        <Separator/>
+
+        <VBox padding="Insets(20)" spacing="10">
+            <Button fx:id="btnGuardar" text="Guardar" onAction="#guardarParametros" prefWidth="100"/>
+            <Button text="Cancelar" onAction="#cancelar" prefWidth="100"/>
+        </VBox>
+
+    </VBox>
+</AnchorPane>

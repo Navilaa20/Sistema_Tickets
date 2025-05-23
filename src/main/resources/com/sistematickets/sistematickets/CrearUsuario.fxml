@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.AgregarUsuario">
+   <children>
+   
+       <Label layoutX="212.0" layoutY="34.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Crear Nuevo Usuario" />
+   
+       <GridPane hgap="10" layoutX="196.0" layoutY="98.0" vgap="10">
+      <children>
+              <Label text="Nombre:" />
+              <TextField fx:id="campoNombre" promptText="Ingrese el nombre completo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+              <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <TextField fx:id="campoCorreo" promptText="ejemplo@correo.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+              <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <PasswordField fx:id="campoContrasenia" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      
+              <Label text="Rol:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <ComboBox fx:id="comboRol" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+       </GridPane>
+   
+       <HBox spacing="10" />
+        <Button layoutX="204.0" layoutY="257.0" onAction="#btnGuardarUsuario" text="Guardar Usuario" />
+        <Button layoutX="348.0" layoutY="257.0" onAction="#btnCancelarUsuario" text="Cancelar" />
+   </children>
+
+
+</AnchorPane>

@@ -30,6 +30,10 @@ public class Ticket {
         this.personaId = personaId;
     }
 
+    public static List<Ticket> listar() {
+        return List.of();
+    }
+
     // Getters y setters
     public int getId() {
         return id;

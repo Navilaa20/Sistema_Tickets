@@ -3,41 +3,29 @@ package com.sistematickets.sistematickets;
 import conexionBD.ConexionBaseDatos;
 import javafx.fxml.FXML;
 
-import javax.swing.*;
-
 import javafx.event.ActionEvent;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class InicioSesion implements Stage {
+public class InicioSesion {
 
     @FXML
     private TextField txtUsuario;
     @FXML
     private TextField txtContrasena;
 
-    private Stage stage;
-    public InicioSesion() {
-        this.stage = stage;
-    }
-
-
-    @Override
-    public void setStage(Stage stage) {
-
-    }
-
-    @Override
-    public void setStage(javafx.stage.Stage stage) {
-
-    }
 
     @FXML
-    public void btnIniciar(ActionEvent actionEvent) throws SQLException {
+    public void btnIniciar(ActionEvent actionEvent) throws SQLException, IOException {
 
         String Usuario = txtUsuario.getText();
         String Contrasena = txtContrasena.getText();
@@ -46,6 +34,15 @@ public class InicioSesion implements Stage {
 
         if(rs.next()){
             System.out.println(rs.getString("nombre"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Administrador-view.fxml"));
+            Parent root = fxmlLoader.load();
+            javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 700 , 500);
+
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
         } else {
             System.out.println("No se encontro el nombre");
         }

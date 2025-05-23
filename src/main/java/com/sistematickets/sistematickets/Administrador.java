@@ -1,5 +1,13 @@
 package com.sistematickets.sistematickets;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,11 +38,16 @@ public class Administrador extends Persona implements Stage {
         this.stage = stage;
     }
 
-    public void gestionParametros() {
-        System.out.println("Configurando parámetros generales del sistema...");
-        //Simulando carga de parámetros
-        System.out.println("Nombre: Patito S.A.");
-        System.out.println("Zona horaria: GTM-6");
+    @FXML
+    public void btnParametros(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ParametroController-view.fxml"));
+        Parent root = fxmlLoader.load();
+        javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, 700 , 500);
+
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void gestionEmpresa(){
@@ -42,40 +55,16 @@ public class Administrador extends Persona implements Stage {
     }
 
 
-    public void configuracionInicial (){
-        System.out.println("Ejecutando configuración inicial...");
-        gestionEmpresa();
-        gestionParametros();
-        gestionRoles();
-        gestionPermisos();
-        gestionDepartamentos();
-        gestionEstadosTicket();
-        gestionUsuarios();
-        System.out.println("Configuración inicial completada.");
-    }
-
     public void gestionRoles (){
-        System.out.println("Gestión de roles del sistema...");
-        Rol rol = new Rol();
-        rol.setNombre("Administrador");
-        rol.setDescripcion("Acceso completo al sistema");
-        System.out.println("Rol creado: " + rol.getNombre());
+
     }
 
     public void gestionPermisos(){
-        System.out.println("Gestión de permisos...");
-        if (permisos == null || permisos.isEmpty()) {
-            System.out.println("No hay permisos asignados.");
-        } else {
-            for (Permiso p : permisos) {
-                System.out.println(p);
-            }
-        }
+
     }
 
     public void gestionDepartamentos (){
-        System.out.println("Gestión de departamentos ...");
-        System.out.println("Ventas");
+
     }
 
     public void gestionEstadosTicket(){
@@ -94,13 +83,18 @@ public class Administrador extends Persona implements Stage {
 
     }
 
-    public void gestionUsuarios (){
-        System.out.println("Gestión de usuarios...");
-        List<Persona> personas = Persona.listar();
-        for (Persona p : personas) {
-            System.out.println("Usuario: " + p.getNombre() + " - Email: " + p.getEmail());
-        }
+    @FXML
+    public void btnCrearUsuario (ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CrearUsuario.fxml"));
+        Parent root = fxmlLoader.load();
+        javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, 700 , 500);
+
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
+
 
 
 }

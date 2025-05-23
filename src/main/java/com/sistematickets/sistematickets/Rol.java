@@ -6,13 +6,14 @@ public class Rol {
 
     private int id;
     private String nombre;
-    private String descripcion;
-    private List<Permiso> permisos;
 
-    public void Rol (int id, String nombre, String descripcion, String permisos) {
+    public Rol(int id, String nombre) {
+    }
+
+
+    public void Rol(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.descripcion = descripcion;
     }
 
     public int getId() {
@@ -31,12 +32,9 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    @Override
+    public String toString() {
+        return nombre; // para que se muestre el nombre en el ComboBox
     }
 
 }

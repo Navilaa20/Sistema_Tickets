@@ -43,25 +43,19 @@ public class Administrador extends Persona {
         stage.show();
     }
 
-    public void gestionEmpresa(){
-        System.out.println("Gestión de información de la empresa");
-    }
 
-
-    public void btnGestionarRoles(ActionEvent actionEvent) throws IOException {
+    @FXML
+    public void btnRol(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Rol-view.fxml"));
         Parent root = fxmlLoader.load();
         javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root, 700 , 500);
 
-        stage.setTitle("Gestión de Roles y Permisos");
+        stage.setTitle("Adiminstrando Roles");
         stage.setScene(scene);
         stage.show();
     }
 
-    public void gestionPermisos(){
-
-    }
 
     public void gestionDepartamentos (){
 

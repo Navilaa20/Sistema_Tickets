@@ -45,6 +45,7 @@ public class ParametrosController {
 
     }
 
+    @FXML
     public void initialize() {
         // Inicializar ComboBox de idioma
         cmbIdioma.getItems().addAll("Español", "Inglés");
@@ -147,8 +148,39 @@ public class ParametrosController {
 
     @FXML
     private void cancelar() {
-        // Cerrar la ventana o limpiar campos
-        // Aquí puedes implementar la lógica para cerrar la ventana o limpiar los campos
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cancelar");
+        alert.setHeaderText(null);
+        alert.setContentText("¿Qué deseas hacer?");
+        alert.getButtonTypes().setAll(
+                new ButtonType("Limpiar", ButtonBar.ButtonData.YES),
+                new ButtonType("Cerrar", ButtonBar.ButtonData.NO),
+                new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE)
+        );
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response.getButtonData() == ButtonBar.ButtonData.YES) {
+                limpiarFormulario();
+            } else if (response.getButtonData() == ButtonBar.ButtonData.NO) {
+                if (stage != null) stage.close();
+            }
+        });
+    }
+
+    private void limpiarFormulario() {
+        txtNombreEmpresa.clear();
+        txtLogoPath.clear();
+        cmbIdioma.getSelectionModel().clearSelection();
+        cmbZonaHoraria.getSelectionModel().clearSelection();
+
+        SpinnerValueFactory<Integer> valueFactory = spnDiasVencimiento.getValueFactory();
+        if (valueFactory != null) {
+            valueFactory.setValue(30);
+        }
+
+        txtPrioridadAlta.clear();
+        txtPrioridadMedia.clear();
+        txtPrioridadBaja.clear();
     }
 
     public void setStage(Stage stage) {

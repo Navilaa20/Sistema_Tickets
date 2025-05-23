@@ -12,4 +12,5 @@ module com.sistematickets.sistematickets {
 
     opens com.sistematickets.sistematickets to javafx.fxml;
     exports com.sistematickets.sistematickets;
+
 }

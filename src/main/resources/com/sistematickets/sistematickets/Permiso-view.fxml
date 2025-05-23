@@ -15,13 +15,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="51.0" fitWidth="47.0" layoutX="40.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imagenes/Usuario.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="99.0" layoutY="55.0" text="Nombre:" />
-      <Label layoutX="98.0" layoutY="28.0" text="Usuario:" />
       <Button layoutX="490.0" layoutY="16.0" mnemonicParsing="false" text="Cerrar Sesión" />
       <Label layoutX="50.0" layoutY="113.0" text="Id Permiso" />
       <TextField layoutX="141.0" layoutY="109.0" prefHeight="25.0" prefWidth="133.0" promptText="0001" />
@@ -34,8 +27,6 @@
       <Label layoutX="306.0" layoutY="113.0" text="Asignado" />
       <RadioButton layoutX="373.0" layoutY="113.0" mnemonicParsing="false" text="Si" />
       <RadioButton layoutX="417.0" layoutY="113.0" mnemonicParsing="false" text="No" />
-      <Label layoutX="306.0" layoutY="185.0" text="Usuario que habilita el permiso" />
-      <TextField layoutX="307.0" layoutY="206.0" prefHeight="25.0" prefWidth="209.0" promptText="Admin " />
       <Label layoutX="50.0" layoutY="147.0" text="Nombre:" />
       <TextField layoutX="141.0" layoutY="143.0" prefHeight="25.0" prefWidth="133.0" promptText="Cambiar estado ticket" />
       <Button layoutX="189.0" layoutY="331.0" mnemonicParsing="false" text="Grabar" />

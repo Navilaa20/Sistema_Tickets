@@ -10,6 +10,7 @@ public class Tecnico extends Persona {
 
     private List<Ticket> ticketsAsignados;
 
+
     public List<Ticket> getTicketsAsignados() {
         return ticketsAsignados;
     }

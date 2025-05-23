@@ -1,3 +1,5 @@
+package com.sistematickets.sistematickets;
+
 
 import com.sistematickets.sistematickets.Departamento;
 import com.sistematickets.sistematickets.Tecnico;
@@ -19,19 +21,7 @@ public class DepartamentoController {
     private ObservableList<Tecnico> tecnicosDisponibles = FXCollections.observableArrayList();
     private ObservableList<Tecnico> tecnicosSeleccionados = FXCollections.observableArrayList();
 
-    @FXML
-    public void initialize() {
-        tecnicosDisponibles.addAll(
-                new Tecnico(1, "Carlos Pérez"),
-                new Tecnico(2, "Ana Ramírez"),
-                new Tecnico(3, "Luis Morales")
-        );
-        listTecnicos.setItems(tecnicosDisponibles);
-        listSeleccionados.setItems(tecnicosSeleccionados);
 
-        listTecnicos.setOnMouseClicked(this::agregarTecnico);
-        listSeleccionados.setOnMouseClicked(this::removerTecnico);
-    }
 
     private void agregarTecnico(MouseEvent event) {
         Tecnico seleccionado = listTecnicos.getSelectionModel().getSelectedItem();

@@ -1,14 +1,13 @@
 package com.sistematickets.sistematickets;
 
+
 public class Permiso {
 
     private int id;
-    private String nombre;
     private String descripcion;
 
-    public Permiso(int id, String nombre, String descripcion) {
+    public Permiso(int id, String descripcion) {
         this.id = id;
-        this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
@@ -16,20 +15,12 @@ public class Permiso {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDescripcion(String descripcion) {
@@ -38,6 +29,8 @@ public class Permiso {
 
     @Override
     public String toString() {
-        return nombre + ": " + descripcion;
+        return descripcion;
     }
+
 }
+

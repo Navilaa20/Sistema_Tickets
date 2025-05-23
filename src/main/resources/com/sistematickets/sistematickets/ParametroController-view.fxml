@@ -1,70 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.sistematickets.sistematickets.ParametrosController"
-      spacing="15" prefWidth="600" prefHeight="600">
+<VBox prefHeight="600" prefWidth="600" spacing="15" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.ParametrosController">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
-
-    <Label text="Configuración de Parámetros del Sistema"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-
-    <HBox spacing="10">
-        <Label text="Nombre de la Empresa:" minWidth="150"/>
-        <TextField fx:id="txtNombreEmpresa" prefWidth="400"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Ruta del Logo:" minWidth="150"/>
-        <TextField fx:id="txtLogoPath" prefWidth="300"/>
-        <Button text="Seleccionar" onAction="#seleccionarLogo"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Idioma Predeterminado:" minWidth="150"/>
-        <ComboBox fx:id="cmbIdioma" prefWidth="200"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Zona Horaria:" minWidth="150"/>
-        <ComboBox fx:id="cmbZonaHoraria" prefWidth="200"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Días para vencimiento:" minWidth="150"/>
-        <Spinner fx:id="spnDiasVencimiento" prefWidth="100"/>
-    </HBox>
-
-    <Separator/>
-
-    <Label text="Prioridades de Tickets" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-
-    <HBox spacing="10">
-        <Label text="Alta:" minWidth="150"/>
-        <TextField fx:id="txtPrioridadAlta" prefWidth="200"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Media:" minWidth="150"/>
-        <TextField fx:id="txtPrioridadMedia" prefWidth="200"/>
-    </HBox>
-
-    <HBox spacing="10">
-        <Label text="Baja:" minWidth="150"/>
-        <TextField fx:id="txtPrioridadBaja" prefWidth="200"/>
-    </HBox>
-
-    <Separator/>
-
-    <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Guardar" onAction="#guardarParametros" prefWidth="100"/>
-        <Button text="Cancelar" onAction="#cancelar" prefWidth="100"/>
-    </HBox>
+   <children>
+   
+       <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Configuración de Parámetros del Sistema" />
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Nombre de la Empresa:" />
+              <TextField fx:id="txtNombreEmpresa" prefWidth="400" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Ruta del Logo:" />
+              <TextField fx:id="txtLogoPath" prefWidth="300" />
+              <Button fx:id="seleccionarLogo" onAction="#seleccionarLogo" text="Seleccionar" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Idioma Predeterminado:" />
+              <ComboBox fx:id="cmbIdioma" prefWidth="200" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Zona Horaria:" />
+              <ComboBox fx:id="cmbZonaHoraria" prefWidth="200" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Días para vencimiento:" />
+              <Spinner fx:id="spnDiasVencimiento" prefWidth="100" />
+      </children>
+       </HBox>
+   
+       <Separator />
+   
+       <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Prioridades de Tickets" />
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Alta:" />
+              <TextField fx:id="txtPrioridadAlta" prefWidth="200" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Media:" />
+              <TextField fx:id="txtPrioridadMedia" prefWidth="200" />
+      </children>
+       </HBox>
+   
+       <HBox spacing="10">
+      <children>
+              <Label minWidth="150" text="Baja:" />
+              <TextField fx:id="txtPrioridadBaja" prefWidth="200" />
+      </children>
+       </HBox>
+   
+       <Separator />
+   
+       <HBox alignment="CENTER_RIGHT" spacing="10">
+      <children>
+              <Button onAction="#guardarParametros" prefWidth="100" text="Guardar" />
+              <Button onAction="#cancelar" prefWidth="100" text="Cancelar" />
+      </children>
+       </HBox>
+   </children>
 
 </VBox>

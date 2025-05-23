@@ -1,9 +1,6 @@
 package com.sistematickets.sistematickets;
 
-import java.util.List;
-
 public class Rol {
-
     private int id;
     private String nombre;
 
@@ -12,18 +9,16 @@ public class Rol {
         this.nombre = nombre;
     }
 
+    // Getters y Setters
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -32,5 +27,4 @@ public class Rol {
     public String toString() {
         return nombre;
     }
-
 }

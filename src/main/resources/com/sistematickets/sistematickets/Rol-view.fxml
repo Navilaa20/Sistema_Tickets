@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.PermisoView">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Permiso">
    <children>
       <Label layoutX="259.0" layoutY="30.0" text="Rol">
          <font>
@@ -30,17 +30,17 @@
       <Label layoutX="228.0" layoutY="192.0" text="Permisos a Otorgar" />
       <Label layoutX="300.0" layoutY="113.0" text="Usuario que crea el rol" />
       <TextField layoutX="431.0" layoutY="109.0" prefHeight="25.0" prefWidth="119.0" promptText="Admin" />
-      <RadioButton layoutX="37.0" layoutY="231.0" mnemonicParsing="false" text="Crear Ticket" />
-      <RadioButton layoutX="155.0" layoutY="231.0" mnemonicParsing="false" text="Editar Ticket" />
-      <RadioButton layoutX="259.0" layoutY="231.0" mnemonicParsing="false" text="Crear Usuario" />
-      <RadioButton layoutX="373.0" layoutY="231.0" mnemonicParsing="false" text="Cambiar Estado de Ticket" />
+      <RadioButton fx:id="rbCrearTicket" layoutX="37.0" layoutY="231.0" mnemonicParsing="false" text="Crear Ticket" />
+      <RadioButton fx:id="rbEditarTicket" layoutX="155.0" layoutY="231.0" mnemonicParsing="false" text="Editar Ticket" />
+      <RadioButton fx:id="rbCrearUsuario" layoutX="259.0" layoutY="231.0" mnemonicParsing="false" text="Crear Usuario" />
+      <RadioButton fx:id="rbCambiarEstado" layoutX="373.0" layoutY="231.0" mnemonicParsing="false" text="Cambiar Estado de Ticket" />
       <RadioButton layoutX="39.0" layoutY="259.0" mnemonicParsing="false" text="Ver Ticket" />
-      <RadioButton layoutX="155.0" layoutY="259.0" mnemonicParsing="false" text="Eliminar Ticket" />
-      <RadioButton layoutX="273.0" layoutY="259.0" mnemonicParsing="false" text="Asignar permisos" />
-      <RadioButton layoutX="403.0" layoutY="259.0" mnemonicParsing="false" text="Crear Roles" />
-      <RadioButton layoutX="39.0" layoutY="290.0" mnemonicParsing="false" text="Definir Parámetros" />
-      <RadioButton layoutX="170.0" layoutY="290.0" mnemonicParsing="false" text="Crear departamentos" />
-      <Button layoutX="202.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Grabar" />
-      <Button layoutX="319.0" layoutY="332.0" mnemonicParsing="false" text="Deshacer" />
+      <RadioButton fx:id="rbEliminarTicket" layoutX="155.0" layoutY="259.0" mnemonicParsing="false" text="Eliminar Ticket" />
+      <RadioButton fx:id="rbAsignarPermisos" layoutX="273.0" layoutY="259.0" mnemonicParsing="false" text="Asignar permisos" />
+      <RadioButton fx:id="rbCrearRoles" layoutX="403.0" layoutY="259.0" mnemonicParsing="false" text="Crear Roles" />
+      <RadioButton fx:id="rbDefinirParametros" layoutX="39.0" layoutY="290.0" mnemonicParsing="false" text="Definir Parámetros" />
+      <RadioButton fx:id="rbCrearDepartamentos" layoutX="170.0" layoutY="290.0" mnemonicParsing="false" text="Crear departamentos" />
+      <Button fx:id="btnGrabarRol" layoutX="202.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Grabar" />
+      <Button fx:id="btnDeshacerRol" layoutX="319.0" layoutY="332.0" mnemonicParsing="false" text="Deshacer" />
    </children>
 </Pane>

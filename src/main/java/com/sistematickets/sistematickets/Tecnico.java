@@ -1,5 +1,9 @@
 package com.sistematickets.sistematickets;
 
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.stage.Stage;
+
 import java.util.List;
 
 public class Tecnico extends Persona {
@@ -26,4 +30,12 @@ public class Tecnico extends Persona {
 
     }
 
+    public void cerrarSesTec(ActionEvent actionEvent) {
+        javafx.stage.Stage currentStage = (Stage) ((Node) actionEvent.getSource())
+                .getScene()
+                .getWindow();
+
+        new HelloApplication()
+                .muestraVentana(currentStage, "InicioSesion-view.fxml");
+    }
 }

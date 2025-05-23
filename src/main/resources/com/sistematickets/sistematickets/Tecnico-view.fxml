@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.TecnicoView">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Tecnico">
    <children>
        <Button layoutX="504.0" layoutY="14.0" mnemonicParsing="false" text="Cerrar Sesión" />
        <Label layoutX="88.0" layoutY="18.0" text="Usuario:" />

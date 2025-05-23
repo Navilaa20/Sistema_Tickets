@@ -8,28 +8,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 06525d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.UsuarioView">
-   <children>
-      <Button alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" layoutX="131.0" layoutY="109.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="133.0" style="-fx-background-color: skyblue;" text="Crear Ticket" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="330.0" layoutY="109.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="133.0" style="-fx-background-color: skyblue;" text="Consultar Ticket" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Cerrar Sesión" />
-      <ImageView disable="true" fitHeight="69.0" fitWidth="66.0" layoutX="165.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imagenes/edit-square-line-icon-vector.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="66.0" fitWidth="82.0" layoutX="356.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imagenes/665-6658537_consulta-individual-de-resultados.png" />
-         </image>
-      </ImageView>
-   </children>
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 06525d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Usuario">
+    <children>
+        <Button alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" layoutX="131.0" layoutY="109.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="133.0" style="-fx-background-color: skyblue;" text="Crear Ticket" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button alignment="BOTTOM_LEFT" layoutX="330.0" layoutY="109.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="133.0" style="-fx-background-color: skyblue;" text="Consultar Ticket" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrarSesUser" prefHeight="30.0" prefWidth="114.0" text="Cerrar Sesión" />
+        <ImageView disable="true" fitHeight="69.0" fitWidth="66.0" layoutX="165.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Imagenes/edit-square-line-icon-vector.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="66.0" fitWidth="82.0" layoutX="356.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Imagenes/665-6658537_consulta-individual-de-resultados.png" />
+            </image>
+        </ImageView>
+    </children>
 </Pane>

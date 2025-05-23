@@ -12,10 +12,8 @@ import javafx.stage.Stage;
 
 import conexionBD.ConexionBaseDatos;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.UUID;
 
 
 public class AgregarUsuario extends Persona {
@@ -29,58 +27,83 @@ public class AgregarUsuario extends Persona {
     @FXML
     private PasswordField campoContrasenia;
 
-    @FXML
-    private ComboBox<Rol> comboRol;
-    ObservableList<Rol> comboRolList = FXCollections.observableArrayList();
+    @FXML private ComboBox<Rol> comboRol;
+    private final ObservableList<Rol> comboRolList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() {
+        System.out.println("[DEBUG] initialize() — cargando roles...");
         cargarRolesDesdeBD();
+        comboRol.setItems(comboRolList);
+        System.out.println("[DEBUG] roles cargados: " + comboRolList);
     }
 
     private void cargarRolesDesdeBD() {
         String sql = "SELECT id, nombre FROM rol";
         try (Connection conn = ConexionBaseDatos.BaseDatos();
-             Statement stmt = conn.createStatement();
-             ResultSet rs   = stmt.executeQuery(sql)) {
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                comboRolList.add(new Rol(rs.getInt("id"), rs.getString("nombre")));
+                Rol r = new Rol(rs.getInt("id"), rs.getString("nombre"));
+                comboRolList.add(r);
+                System.out.println("[DEBUG] agregué rol: " + r);
             }
-            comboRol.setItems(comboRolList);
 
         } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR,
-                    "Error", "No se pudieron cargar los roles:\n" + e.getMessage());
+            showAlert(Alert.AlertType.ERROR, "Error", "No se pudieron cargar los roles:\n" + e.getMessage());
         }
     }
 
 
     @FXML
     public void btnGuardarUsuario() {
-        String nombre = campoNombre.getText().replace("'","''");
-        String correo = campoCorreo.getText().replace("'","''");
+        String nombre = campoNombre.getText().trim();
+        String correo = campoCorreo.getText().trim();
+        String contrasenia = campoContrasenia.getText();
         Rol rol = comboRol.getSelectionModel().getSelectedItem();
-        String contrasenia = campoContrasenia.getText().replace("'","''");
+
 
         if (rol== null){
             showAlert(Alert.AlertType.WARNING, "Advertencia", "Debe seleccionar un rol.");
             return;
         }
 
-        String agregarUsuarios = "INSERT INTO persona (nombre,email,contrasenia,rol) VALUES ('"+ nombre + "','" + correo + "','" + contrasenia + "','" + rol.getId() + "');";
+        String sql = """
+    INSERT INTO persona (id, nombre, email, contrasenia, rol)
+    VALUES (?,?,?,?,?)
+    """;
+        try ( Connection conn = ConexionBaseDatos.BaseDatos();
+              PreparedStatement ps = conn.prepareStatement(sql) ) {
 
+            // 1) Generar el UUID
+            String id = UUID.randomUUID().toString();
 
-        try{
-            Statement statement = ConexionBaseDatos.BaseDatos().createStatement();
-            statement.executeUpdate(agregarUsuarios);
-            showAlert(Alert.AlertType.INFORMATION, "Mensaje", "Registro Exitoso, Usuario Agregado");
-            limpiarFormulario();
-        } catch(SQLException e){
-            showAlert(Alert.AlertType.ERROR, "Mensaje","Error al agregar el usuario");
+            // 2) Asignar parámetros
+            ps.setObject(1, UUID.fromString(id));      // para el id UUID
+            ps.setString(2, nombre);
+            ps.setString(3, correo);
+            ps.setString(4, contrasenia);
+
+            // 🔑 Aquí pasamos el nombre del rol, no el id
+            ps.setString(5, comboRol.getValue().getNombre());
+
+            // 3) Ejecutar
+            ps.executeUpdate();
+            showAlert(Alert.AlertType.INFORMATION, "Éxito", "Usuario agregado correctamente.");
+
+        } catch (SQLException e) {
+            showAlert(Alert.AlertType.ERROR,
+                    "No se pudo agregar el usuario:",
+                    e.getMessage());
         }
 
     }
+
+
+
+
+
 
     @FXML
     private void btnCancelarUsuario(ActionEvent actionEvent) {

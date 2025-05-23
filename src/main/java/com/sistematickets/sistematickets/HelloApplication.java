@@ -26,16 +26,14 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    public void muestraVentana(Stage stage, String fxmlFile){
+    public void muestraVentana(Stage stage, String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Pane panel = fxmlLoader.load();
             Scene scene = new Scene(panel);
-
-
             stage.setScene(scene);
             stage.show();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -43,6 +41,5 @@ public class HelloApplication extends Application {
     public static void llenarCombo(ComboBox<String> llenarCombo, ObservableList<String> infoCombo){
         llenarCombo.setItems(infoCombo);
     }
-
 
 }

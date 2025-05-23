@@ -10,44 +10,78 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-
+import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
 public class InicioSesion {
 
-    @FXML
-    private TextField txtUsuario;
-    @FXML
-    private TextField txtContrasena;
-
+    @FXML private TextField txtUsuario;
+    @FXML private TextField txtContrasena;
 
     @FXML
-    public void btnIniciar(ActionEvent actionEvent) throws SQLException, IOException {
+    public void btnIniciar(ActionEvent actionEvent) {
+        String email = txtUsuario.getText().trim();
+        String pass  = txtContrasena.getText().trim();
 
-        String Usuario = txtUsuario.getText();
-        String Contrasena = txtContrasena.getText();
-        String sql = "SELECT * FROM persona WHERE email = '" + Usuario + "' AND contrasenia = '" + Contrasena + "'";
-        ResultSet rs = ConexionBaseDatos.ConsultaSQL(sql);
+        String sql = """
+            SELECT nombre, rol
+              FROM persona
+             WHERE email = ? 
+               AND contrasenia = ?
+        """;
 
-        if(rs.next()){
-            System.out.println(rs.getString("nombre"));
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Administrador-view.fxml"));
-            Parent root = fxmlLoader.load();
-            javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, 700 , 500);
+        try (Connection conn = ConexionBaseDatos.BaseDatos();
+             PreparedStatement ps = conn.prepareStatement(sql) ) {
 
-            stage.setTitle("Hello!");
-            stage.setScene(scene);
-            stage.show();
+            ps.setString(1, email);
+            ps.setString(2, pass);
 
-        } else {
-            System.out.println("No se encontro el nombre");
+            try ( ResultSet rs = ps.executeQuery() ) {
+                if (!rs.next()) {
+                    // credenciales inválidas
+                    new Alert(Alert.AlertType.ERROR, "Usuario o contraseña incorrectos.").showAndWait();
+                    return;
+                }
+
+                String nombre = rs.getString("nombre");
+                String rol    = rs.getString("rol");       // <-- aquí leemos el rol
+
+                // decidir qué FXML abrir según el rol
+                String fxml;
+                String title;
+                switch (rol) {
+                    case "Administrador":
+                        fxml  = "Administrador-view.fxml";
+                        title = "Panel Administrador";
+                        break;
+                    case "Tecnico":
+                        fxml  = "Tecnico-view.fxml";
+                        title = "Panel Técnico";
+                        break;
+                    default:
+                        fxml  = "Usuario-view.fxml";
+                        title = "Panel Usuario";
+                }
+
+                // cargar la nueva escena
+                Parent root = FXMLLoader.load(getClass().getResource(fxml));
+                Stage stage = (Stage) ((Node) actionEvent.getSource())
+                        .getScene().getWindow();
+                stage.setTitle("Bienvenido " + nombre + " — " + title);
+                stage.setScene(new Scene(root, 700, 500));
+                stage.show();
+            }
+
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error al iniciar sesión:\n" + e.getMessage())
+                    .showAndWait();
         }
-
-
     }
 
 }

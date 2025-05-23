@@ -6,12 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Administrador extends Persona implements Stage {
+public class Administrador extends Persona {
 
     private transient javafx.stage.Stage stage;
     private List<Permiso> permisos;
@@ -29,14 +29,7 @@ public class Administrador extends Persona implements Stage {
         this.permisos = permisos;
     }
 
-    @Override
-    public void setStage(Stage stage) {
-    }
 
-    @Override
-    public void setStage(javafx.stage.Stage stage) {
-        this.stage = stage;
-    }
 
     @FXML
     public void btnParametros(ActionEvent actionEvent) throws IOException {
@@ -90,11 +83,20 @@ public class Administrador extends Persona implements Stage {
         javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root, 700 , 500);
 
-        stage.setTitle("Hello!");
+        stage.setTitle("Bienvenido a Sistema Tickets Nilver");
         stage.setScene(scene);
         stage.show();
     }
 
 
+    @FXML
+    public void CerrarSesionAdm(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) ((Node) actionEvent.getSource())
+                .getScene()
+                .getWindow();
 
+        new HelloApplication()
+                .muestraVentana(currentStage, "InicioSesion-view.fxml");
+
+    }
 }

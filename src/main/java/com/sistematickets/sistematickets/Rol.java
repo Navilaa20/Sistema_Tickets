@@ -8,10 +8,6 @@ public class Rol {
     private String nombre;
 
     public Rol(int id, String nombre) {
-    }
-
-
-    public void Rol(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -34,7 +30,7 @@ public class Rol {
 
     @Override
     public String toString() {
-        return nombre; // para que se muestre el nombre en el ComboBox
+        return nombre;
     }
 
 }

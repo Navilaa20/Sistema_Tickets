@@ -62,8 +62,16 @@ public class Administrador extends Persona {
         stage.show();
     }
 
+    @FXML
+    public void btnDepartamentos (ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Departamento-view.fxml"));
+        Parent root = fxmlLoader.load();
+        javafx.stage.Stage stage = (javafx.stage.Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, 700 , 500);
 
-    public void gestionDepartamentos (){
+        stage.setTitle("Gestión de Departamentos");
+        stage.setScene(scene);
+        stage.show();
 
     }
 

@@ -21,7 +21,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="89.0" layoutY="212.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="89.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnDepartamentos" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>

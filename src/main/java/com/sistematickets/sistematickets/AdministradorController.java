@@ -6,12 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Administrador extends Persona {
+
+    @FXML
+    Label lblNombre;
+    private String userId;
+    private String currentUserId;
 
     private transient javafx.stage.Stage stage;
     private List<Permiso> permisos;
@@ -99,5 +105,11 @@ public class Administrador extends Persona {
         new HelloApplication()
                 .muestraVentana(currentStage, "InicioSesion-view.fxml");
 
+    }
+
+    public void initData(Persona persona) {
+        this.userId = persona.getId();
+        this.lblNombre.setText(persona.getNombre());
+        lblNombre.setText(persona.getNombre());
     }
 }

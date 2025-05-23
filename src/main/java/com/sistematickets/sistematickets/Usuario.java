@@ -6,18 +6,6 @@ import javafx.stage.Stage;
 
 public class Usuario extends Persona {
 
-
-    public Ticket crearTicket(String descripcion) throws Exception {
-        Ticket ticket = new Ticket();
-        ticket.setDescripcion(descripcion);
-        return ticket;
-    }
-
-    public void mostrarUsuario(Persona persona){
-        System.out.println("Nombre: " + persona.getNombre());
-    }
-
-
     public void cerrarSesUser(ActionEvent actionEvent) {
         javafx.stage.Stage currentStage = (Stage) ((Node) actionEvent.getSource())
                 .getScene()
@@ -25,5 +13,17 @@ public class Usuario extends Persona {
 
         new HelloApplication()
                 .muestraVentana(currentStage, "InicioSesion-view.fxml");
+    }
+
+    public void onConsultarTik(ActionEvent actionEvent) {
+
+    }
+
+    public void onCrearTik(ActionEvent actionEvent) {
+        javafx.stage.Stage currentStage = (Stage) ((Node) actionEvent.getSource())
+                .getScene()
+                .getWindow();
+        new HelloApplication()
+                .muestraVentana(currentStage, "Ticket-view.fxml");
     }
 }

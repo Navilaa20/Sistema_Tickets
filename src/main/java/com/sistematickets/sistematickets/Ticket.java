@@ -1,5 +1,7 @@
 package com.sistematickets.sistematickets;
 
+import javafx.event.ActionEvent;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,9 @@ public class Ticket {
     private String descripcion;
     private LocalDateTime fechaCreacion;
     private String estado;
+    private String departamento;
     private String prioridad;
+    private boolean asignado;
     private String personaId;
 
     public Ticket() {
@@ -26,7 +30,9 @@ public class Ticket {
         this.descripcion = descripcion;
         this.fechaCreacion = LocalDateTime.now();
         this.estado = estado;
+        this.departamento = departamento;
         this.prioridad = prioridad;
+        this.asignado = false;
         this.personaId = personaId;
     }
 
@@ -90,8 +96,39 @@ public class Ticket {
         return personaId;
     }
 
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public boolean isAsignado() {
+        return asignado;
+    }
+
+    public void setAsignado(boolean asignado) {
+        this.asignado = asignado;
+    }
+
     public void setPersonaId(String personaId) {
         this.personaId = personaId;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", estado='" + estado + '\'' +
+                ", departamento='" + departamento + '\'' +
+                ", prioridad='" + prioridad + '\'' +
+                ", asignado=" + asignado +
+                ", personaId='" + personaId + '\'' +
+                '}';
     }
 
 }

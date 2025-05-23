@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public abstract class Persona {
+public class Persona {
 
     private static List<Persona> personas = new ArrayList<>();
 

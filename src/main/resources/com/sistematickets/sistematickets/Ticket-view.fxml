@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Permiso">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.TicketController">
     <children>
         <Label layoutX="241.0" layoutY="30.0" text="Tickets">
             <font>
@@ -22,21 +22,21 @@
         </ImageView>
         <Label layoutX="99.0" layoutY="55.0" text="Nombre:" />
         <Label layoutX="98.0" layoutY="28.0" text="Usuario:" />
-        <Button layoutX="463.0" layoutY="23.0" mnemonicParsing="false" text="Cerrar Sesión" />
-        <Label layoutX="50.0" layoutY="113.0" text="Num Ticket" />
-        <TextField layoutX="141.0" layoutY="109.0" prefHeight="25.0" prefWidth="133.0" promptText="0001" />
-        <TextField layoutX="141.0" layoutY="143.0" prefHeight="25.0" prefWidth="133.0" promptText="Ventas" />
-        <Label layoutX="50.0" layoutY="147.0" text="Departamento:" />
-        <Label layoutX="51.0" layoutY="180.0" text="Prioridad:" />
-        <TextField layoutX="141.0" layoutY="176.0" prefHeight="25.0" prefWidth="133.0" promptText="Baja, Media o Alta" />
-        <Label layoutX="51.0" layoutY="220.0" text="Descripción:" />
-        <TextArea layoutX="141.0" layoutY="210.0" prefHeight="90.0" prefWidth="376.0" />
+        <Button layoutX="463.0" layoutY="23.0" mnemonicParsing="false" onAction="#ticCerrarSesion" text="Cerrar Sesión" />
+        <TextField fx:id="tfDepartamento" layoutX="141.0" layoutY="143.0" prefHeight="25.0" prefWidth="133.0" promptText="Ventas" />
+        <Label layoutX="37.0" layoutY="147.0" text="Departamento:" />
+        <Label layoutX="40.0" layoutY="181.0" text="Prioridad:" />
+        <TextField fx:id="tfPrioridad" layoutX="141.0" layoutY="176.0" prefHeight="25.0" prefWidth="133.0" promptText="Baja, Media o Alta" />
+        <Label layoutX="40.0" layoutY="221.0" text="Descripción:" />
+        <TextArea fx:id="tfDescripcion" layoutX="141.0" layoutY="210.0" prefHeight="90.0" prefWidth="376.0" />
         <Label layoutX="306.0" layoutY="113.0" text="Asignado" />
-        <RadioButton layoutX="373.0" layoutY="113.0" mnemonicParsing="false" text="Si" />
-        <RadioButton layoutX="417.0" layoutY="113.0" mnemonicParsing="false" text="No" />
+        <RadioButton fx:id="rbAsignadoSi" layoutX="373.0" layoutY="113.0" mnemonicParsing="false" text="Si" />
+        <RadioButton fx:id="rbAsignadoNo" layoutX="417.0" layoutY="113.0" mnemonicParsing="false" text="No" />
         <Label layoutX="306.0" layoutY="147.0" text="Tecnico Asignado" />
-        <TextField layoutX="307.0" layoutY="168.0" prefHeight="25.0" prefWidth="209.0" promptText="Baja, Media o Alta" />
-        <Button layoutX="201.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Grabar" />
-        <Button layoutX="303.0" layoutY="322.0" mnemonicParsing="false" text="Deshacer" />
+        <Button layoutX="185.0" layoutY="322.0" mnemonicParsing="false" onAction="#ticGuardar" prefHeight="31.0" prefWidth="81.0" text="Guardar" />
+        <Button layoutX="303.0" layoutY="322.0" mnemonicParsing="false" onAction="#ticDeshacer" text="Deshacer" />
+      <Label layoutX="38.0" layoutY="113.0" prefHeight="21.0" prefWidth="80.0" text="Título:" />
+      <TextField fx:id="tfTitulo" layoutX="141.0" layoutY="108.0" prefHeight="25.0" prefWidth="133.0" promptText="Título" />
+      <ComboBox fx:id="cbTecnicoAsignado" layoutX="309.0" layoutY="166.0" prefWidth="150.0" />
     </children>
 </Pane>

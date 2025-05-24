@@ -11,22 +11,17 @@
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistematickets.sistematickets.Administrador">
     <children>
         <Button layoutX="482.0" layoutY="14.0" mnemonicParsing="false" onAction="#CerrarSesionAdm" prefHeight="25.0" prefWidth="104.0" text="Cerrar Sesión" />
-        <Button alignment="BOTTOM_CENTER" layoutX="248.0" layoutY="75.0" mnemonicParsing="false" onAction="#btnParametros" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Parametros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button alignment="BOTTOM_CENTER" layoutX="361.0" layoutY="75.0" mnemonicParsing="false" onAction="#btnParametros" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Parametros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="btnRol" alignment="BOTTOM_CENTER" layoutX="413.0" layoutY="75.0" mnemonicParsing="false" onAction="#btnRol" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Roles" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button fx:id="btnRol" alignment="BOTTOM_CENTER" layoutX="352.0" layoutY="219.0" mnemonicParsing="false" onAction="#btnRol" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Roles" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="158.0" layoutY="219.0" mnemonicParsing="false" onAction="#btnDepartamentos" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Button>
-        <Button alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="219.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Tickets" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="89.0" layoutY="219.0" mnemonicParsing="false" onAction="#btnDepartamentos" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -36,24 +31,19 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <ImageView fitHeight="52.0" fitWidth="76.0" layoutX="262.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="52.0" fitWidth="76.0" layoutX="375.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Imagenes/Parametros.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="439.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="378.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Imagenes/Roles.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="180.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="111.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Imagenes/Depatamentos.png" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="61.0" fitWidth="76.0" layoutX="346.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../Imagenes/Ticket.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="111.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">

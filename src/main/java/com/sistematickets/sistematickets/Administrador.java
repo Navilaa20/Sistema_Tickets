@@ -27,16 +27,6 @@ public class Administrador extends Persona {
         this.permisos = new ArrayList<>();
     }
 
-    public List <Permiso> getPermisos(){
-        return permisos;
-    }
-
-    public void setPermisos(List<Permiso> permisos) {
-        this.permisos = permisos;
-    }
-
-
-
     @FXML
     public void btnParametros(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ParametroController-view.fxml"));
@@ -101,8 +91,6 @@ public class Administrador extends Persona {
     }
 
     public void initData(Persona persona) {
-        this.userId = persona.getId();
-        this.lblNombre.setText(persona.getNombre());
-        lblNombre.setText(persona.getNombre());
-    }
+        this.userId = persona.getId().toString();        this.lblNombre.setText(persona.getNombre());
+        lblNombre.setText(persona.getNombre());    }
 }

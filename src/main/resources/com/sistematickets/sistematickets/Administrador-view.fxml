@@ -21,17 +21,12 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="89.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnDepartamentos" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button fx:id="btnDepartamentos" alignment="BOTTOM_CENTER" layoutX="158.0" layoutY="219.0" mnemonicParsing="false" onAction="#btnDepartamentos" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Departamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button alignment="BOTTOM_CENTER" layoutX="248.0" layoutY="212.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Tickets" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Button>
-        <Button alignment="BOTTOM_CENTER" layoutX="413.0" layoutY="212.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Flujo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <Button alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="219.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="104.0" style="-fx-background-color: gray;" text="Tickets" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -51,19 +46,14 @@
                 <Image url="@../../../Imagenes/Roles.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="111.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="180.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Imagenes/Depatamentos.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="61.0" fitWidth="76.0" layoutX="268.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="61.0" fitWidth="76.0" layoutX="346.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Imagenes/Ticket.png" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="61.0" fitWidth="104.0" layoutX="413.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../Imagenes/Flujo.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="111.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">

@@ -75,21 +75,6 @@ public class Administrador extends Persona {
 
     }
 
-    public void gestionEstadosTicket(){
-        System.out.println("Abierto, En Proceso, Cerrado.");
-    }
-
-    public void gestionTicket (){
-        System.out.println("Gestión de tickets...");
-        List<Ticket> lista = Ticket.listar();
-        for (Ticket t : lista) {
-            System.out.println("Ticket #" + t.getId() + " - Estado: " + t.getEstado());
-        }
-    }
-
-    public void gestionFlujos (){
-
-    }
 
     @FXML
     public void btnCrearUsuario (ActionEvent actionEvent) throws IOException {

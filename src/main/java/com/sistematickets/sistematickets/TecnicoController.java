@@ -59,6 +59,15 @@ public class TecnicoController {
     public void initData(Tecnico tecnico) {
         this.tecnico = tecnico;
         lblNombre.setText(tecnico.getNombre());
+
+        // Aquí llenamos los tickets asignados a ese técnico
+        listaTickets = FXCollections.observableArrayList(tecnico.getTicketsAsignados());
+        tableTickets.setItems(listaTickets);
+    }
+
+    private void actualizarTabla() {
+        listaTickets.setAll(tecnico.getTicketsAsignados());
+        tableTickets.refresh();
     }
 
     @FXML
@@ -81,7 +90,7 @@ public class TecnicoController {
 
     @FXML
     private void cerrarSesion(ActionEvent event) {
-        Stage stage = (Stage) btnCerrarSesion.getScene().getWindow();
-        stage.close();
+        Stage currentStage = (Stage) btnCerrarSesion.getScene().getWindow();
+        new HelloApplication().muestraVentana(currentStage, "InicioSesion-view.fxml");
     }
 }

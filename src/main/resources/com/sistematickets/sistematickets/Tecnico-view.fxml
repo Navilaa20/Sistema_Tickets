@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.sistematickets.sistematickets.TecnicoController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.sistematickets.sistematickets.TecnicoController">
     <children>
-        <VBox spacing="10.0" padding="Insets(10,10,10,10)">
+        <VBox spacing="10.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
             <children>
-                <VBox spacing="10.0" padding="Insets(10,10,10,10)">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
                     <children>
                         <Label text="Nombre del Técnico:" />
                         <Label fx:id="lblNombre" text="Nombre" />
@@ -16,18 +24,18 @@
                 </VBox>
                 <TableView fx:id="tableTickets" prefHeight="200.0">
                     <columns>
-                        <TableColumn fx:id="colId" text="ID" prefWidth="50.0" />
-                        <TableColumn fx:id="colTitulo" text="Título" prefWidth="150.0" />
-                        <TableColumn fx:id="colPrioridad" text="Prioridad" prefWidth="100.0" />
-                        <TableColumn fx:id="colDepartamento" text="Departamento" prefWidth="100.0" />
-                        <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
+                        <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="colTitulo" prefWidth="150.0" text="Título" />
+                        <TableColumn fx:id="colPrioridad" prefWidth="100.0" text="Prioridad" />
+                        <TableColumn fx:id="colDepartamento" prefWidth="100.0" text="Departamento" />
+                        <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
                     </columns>
                 </TableView>
                 <HBox spacing="10.0">
                     <children>
-                        <Button fx:id="btnAsignar" text="Asignar" onAction="#asignarTicket" />
-                        <Button fx:id="btnResolver" text="Resolver" onAction="#resolverTicket" />
-                        <Button fx:id="btnCerrarSesion" text="Cerrar Sesión" onAction="#cerrarSesion" />
+                        <Button fx:id="btnAsignar" onAction="#asignarTicket" text="Asignar" />
+                        <Button fx:id="btnResolver" onAction="#resolverTicket" text="Resolver" />
+                        <Button fx:id="btnCerrarSesion" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="97.0" text="Cerrar Sesión" />
                     </children>
                 </HBox>
             </children>
